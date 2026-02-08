@@ -15,7 +15,8 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # PS1='[%n@%m] %~ $ '
-PS1='%~ $ '
+# PS1='%~ λ '
+PS1='%F{7}%~%f'$'\n''λ '
 [ -z "$PS1" ] || pfetch
 
 bindkey "\e[1;5C" forward-word
