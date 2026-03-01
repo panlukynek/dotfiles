@@ -1,0 +1,8 @@
+alias v='nvim'
+alias S='paru -S'
+alias Ss='paru -Ss'
+alias Syu='paru -Syu'
+alias Rns='paru -Rns'
+alias yt-mp3='yt-dlp -x --audio-format mp3'
+alias yt-ogg='yt-dlp -x --audio-format ogg'
+alias yt-wav='yt-dlp -x --audio-format wav'
