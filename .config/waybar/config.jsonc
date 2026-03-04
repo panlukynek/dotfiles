@@ -14,8 +14,8 @@
 	// Choose the order of the modules
 	"modules-left": [
 		"hyprland/workspaces",
-		"hyprland/language"
-		// "custom/media"
+		"hyprland/language",
+		"custom/media"
 	],
 	"modules-center": [
 		// "hyprland/window",

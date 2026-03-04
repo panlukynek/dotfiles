@@ -1,0 +1,67 @@
+@import './colors.css';
+
+* {
+	border: none;
+	border-radius: 0px;
+	font-family: 'Jetbrains Mono', monospace;
+	font-size: 16px;
+	font-weight: 700;
+	padding: 0;
+	margin: 0;
+	color: @text;
+}
+
+window#waybar {
+	background: transparent;
+}
+
+.modules-center {
+	background: @background;
+	padding: 6px 12px;
+	border-radius: 20px;
+	border-style: solid;
+	border-width: 2px;
+}
+
+tooltip {
+	background: @background;
+	border: 2px solid;
+	border-radius: 20px;
+}
+
+tooltip label {
+	padding: 6px;
+}
+
+#workspaces {
+	background: transparent;
+	padding: 0 6px;
+}
+
+#workspaces button {
+	padding: 0 6px;
+	border-radius: 16px;
+	border: 0;
+	background: transparent;
+	box-shadow: inherit;
+	text-shadow: inherit;
+	transition: all 0.3s ease-out;
+}
+
+#workspaces button.active {
+	background: linear-gradient(135deg, @blue 0%, @purple 50%, @red 100%);
+	min-width: 40px;	
+}
+
+#workspaces button.urgent {
+	background: @red;
+}
+
+#battery,
+#network,
+#clock,
+#window,
+#custom-media {
+	padding: 0 3px;
+	border: none;
+}
