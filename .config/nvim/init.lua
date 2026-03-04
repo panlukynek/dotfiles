@@ -3,6 +3,7 @@ require("remap")
 -- vim.g.loaded_netrw = 1
 -- vim.g.loaded_netrwPlugin = 1
 
+vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
@@ -19,7 +20,8 @@ vim.opt.clipboard:append("unnamedplus")
 vim.lsp.enable('biome')
 
 vim.opt.listchars = {
-  tab = '» ',   -- Shows a "»" followed by spaces
+  -- tab = '» ',   -- Shows a "»" followed by spaces
+  tab = '▎ ',
   trail = '·',  -- Shows trailing spaces as dots (optional but helpful)
   -- space = '·',  -- Shows all spaces as dots (optional, like VSCode "renderWhitespace: all")
   nbsp = '␣',   -- Non-breaking spaces
@@ -54,12 +56,50 @@ require('colorizer').setup({
   },
 })
 
-require("ibl").setup()
+require("ibl").setup({
+	indent = {
+		char = "", -- This is the vertical line character
+	},
+	scope = {
+		enabled = true, -- Set to true if you want the "active" indent to be highlighted
+		show_start = false,
+		show_end = false,
+	},
+})
 require("lualine").setup()
 
-vim.o.background = "dark" -- or "light" for light mode
 require("gruvbox").setup({
-  dim_inactive = true,
+  dim_inactive = false,
   transparent_mode = true,
 })
 vim.cmd("colorscheme gruvbox")
+
+vim.o.background = "dark"
+
+-- require('kanagawa').setup({
+--     compile = false,             -- enable compiling the colorscheme
+--     undercurl = true,            -- enable undercurls
+--     commentStyle = { italic = true },
+--     functionStyle = {},
+--     keywordStyle = { italic = true},
+--     statementStyle = { bold = true },
+--     typeStyle = {},
+--     transparent = false,         -- do not set background color
+--     dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
+--     terminalColors = true,       -- define vim.g.terminal_color_{0,17}
+--     colors = {                   -- add/modify theme and palette colors
+--         palette = {},
+--         theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+--     },
+--     overrides = function(colors) -- add/modify highlights
+--         return {}
+--     end,
+--     theme = "dragon",            -- Load "wave" theme
+--     background = {               -- map the value of 'background' option to a theme
+--         dark = "dragon",         -- try "dragon" !
+--         light = "lotus"
+--     },
+-- })
+--
+-- -- setup must be called before loading
+-- vim.cmd("colorscheme kanagawa")

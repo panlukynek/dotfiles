@@ -1,0 +1,122 @@
+// -*- mode: jsonc -*-
+{
+	"layer": "top", // Waybar at top layer
+	"position": "bottom", // Waybar position (top|bottom|left|right)
+	"height": 30, // Waybar height (to be removed for auto height)
+	// "width": 1280, // Waybar width
+	// "spacing": 4, // Gaps between modules (4px)
+
+	"margin-top": 0,
+	"margin-right": 10,
+	"margin-bottom": 10,
+	"margin-left": 10,
+
+	// Choose the order of the modules
+	"modules-left": [
+		"hyprland/workspaces",
+		"hyprland/language",
+		"custom/media"
+	],
+	"modules-center": [
+		// "hyprland/window",
+		"clock"
+	],
+	"modules-right": [
+		"tray",
+		"network",
+		"cpu",
+        "memory",
+        "backlight",
+        "battery",
+        "battery#bat2",
+        "wireplumber",
+        "wireplumber#source",
+        "custom/power"
+    ],
+    "clock": {
+        // "timezone": "Europe/Prague",
+        // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%I:%M - %a, %b %d}"
+    },
+    "cpu": {
+        "format": "CPU: {usage}%",
+        "tooltip": true
+    },
+    "memory": {
+        "format": "RAM: {}%"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 35,
+            "critical": 20
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected!",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "wireplumber": {
+    	"format": "VOL: {volume}%",
+    	"format-muted": "[WP muted]",
+    	"on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+    "wireplumber#source": {
+        "node-type": "Audio/Source",
+        "format": "MIC: {volume}%",
+        "format-muted": "[Mic muted]",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "scroll-step": 5
+    },
+	"hyprland/language": {
+		"format": "{}",
+		"format-en": "English",
+		"format-cs": "Čeština"
+		// "keyboard-name": "at-translated-set-2-keyboard"
+	},
+    "custom/media": {
+        "format": "{icon} {text}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/power": {
+        "format" : "",
+		"tooltip": false,
+		"menu": "on-click",
+		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-actions": {
+			"shutdown": "shutdown now",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+			"hibernate": "systemctl hibernate"
+		}
+    }
+}

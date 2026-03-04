@@ -1,3 +1,5 @@
+alias ..='cd ../'
+alias ...='cd ../../'
 alias v='nvim'
 alias S='paru -S'
 alias Ss='paru -Ss'

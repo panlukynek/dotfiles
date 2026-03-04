@@ -11,12 +11,13 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+source ~/alias.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # PS1='[%n@%m] %~ $ '
 # PS1='%~ λ '
-PS1='%F{7}%~%f'$'\n''λ '
+PS1=$'\n''%F{7}%~%f'$'\n''λ '
 [ -z "$PS1" ] || pfetch
 
 bindkey "\e[1;5C" forward-word
@@ -25,11 +26,6 @@ bindkey "${terminfo[kdch1]}" delete-char
 
 alias ls='ls -la --color=auto'
 alias grep='grep --color=auto'
-alias v='nvim'
-alias S='paru -S'
-alias Ss='paru -Ss'
-alias Syu='paru -Syu'
-alias Rns='paru -Rns'
 
 export EDITOR=nvim
 export BUN_INSTALL="$HOME/.bun"
