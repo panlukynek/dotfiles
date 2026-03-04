@@ -12,7 +12,7 @@ compinit
 # End of lines added by compinstall
 
 source ~/alias.zsh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # PS1='[%n@%m] %~ $ '
