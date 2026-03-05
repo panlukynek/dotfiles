@@ -57,11 +57,18 @@ tooltip label {
 	background: @red;
 }
 
-#battery,
+#custom-media,
+#workspaces,
+#wireplumber,
 #network,
-#clock,
-#window,
-#custom-media {
+#battery {
 	padding: 0 3px;
-	border: none;
+}
+
+#clock {
+	margin-right: 3px;
+}
+
+#custom-power {
+	margin-left: 3px;
 }

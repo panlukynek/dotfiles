@@ -7,7 +7,7 @@
 		"clock",
 		// "custom/media",
 		"hyprland/workspaces",
-		"wireplumber",
+		// "wireplumber",
 		"network",
 		"battery",
 		"custom/power"
@@ -38,11 +38,11 @@
 			"warning": 35,
 			"critical": 20
 		},
-		"format": "{capacity}% {icon}",
-		"format-full": "{capacity}% {icon}",
-		"format-charging": "{capacity}% ",
+		"format": "{icon}",
+		"format-full": "{icon}",
+		"format-charging": "",
 		"format-plugged": "{capacity}% ",
-		"format-alt": "{time} {icon}",
+		"format-alt": "{capacity}%, {time}",
 		// "format-good": "", // An empty format will hide the module
 		// "format-full": "",
 		"format-icons": ["", "", "", "", ""]
@@ -54,16 +54,17 @@
 
 	"network": {
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
-		"format-wifi": "  {icon}",
+		"format-wifi": "{icon}",
 		"format-ethernet": "{ipaddr}/{cidr}",
 		"tooltip-format": "{ifname} via {gwaddr}, ({signalStrength}%)",
 		"format-linked": "{ifname} (No IP)",
-		"format-disconnected": "Disconnected!",
+		"format-disconnected": "󰤭",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}",
 		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
 	},
+
 	"custom/power": {
-		"format": " 󰣇",
+		"format": "󰣇",
 		// "format": " 󰐥",
 		"tooltip": false,
 		"menu": "on-click",
