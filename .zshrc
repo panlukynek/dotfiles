@@ -15,9 +15,15 @@ source ~/alias.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats ' %F{cyan}(%b)%f'
+setopt PROMPT_SUBST
+
 # PS1='[%n@%m] %~ $ '
 # PS1='%~ λ '
-PS1=$'\n''%F{7}%~%f'$'\n''λ '
+# PS1=$'\n''%F{7}%~%f'$'\n''λ '
+PS1=$'\n''%F{7}%~%f${vcs_info_msg_0_}'$'\n''λ '
 [ -z "$PS1" ] || pfetch
 
 bindkey "\e[1;5C" forward-word
