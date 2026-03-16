@@ -30,6 +30,7 @@ bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
 bindkey "${terminfo[kdch1]}" delete-char
 bindkey '^H' backward-kill-word
+bindkey "\e[3;5~" kill-word
 
 alias ls='ls -la --color=auto'
 alias grep='grep --color=auto'
