@@ -1,7 +1,7 @@
 font=JetBrains Mono 12
 sort=-time
 layer=overlay
-anchor=bottom-right
+anchor=bottom-center
 background-color=#2828287f
 border-color=#d8a657FF
 border-radius=12
